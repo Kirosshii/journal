@@ -11,7 +11,7 @@ def lockFile(rutaArchivo, fechaActual):										# Función para asegurar que so
 def blockNotif(fechaActual):
     hRest = 23 -int(fechaActual.strftime("%H"))			  	# calcula cuánto tiempo falta para un nuevo día
     mRest = 60 -int(fechaActual.strftime("%M"))			  	# y lo informa en un mensaje por pantalla
-    print(f"¡Ya escribiste una entrada para el día de hoy!\nPuedes escribir una nueva en {hRest} horas y {mRest} minutos.")  
+    print(f"¡Ya has escrito una entrada para el día de hoy!\nPuedes escribir una nueva entrada en {hRest} horas y {mRest} minutos.")  
 
 def newEntry(nomArchivo, fechaHoy):
     diasES = { "Mon":"Lunes","Tue":"Martes","Wed":"Miércoles","Thu":"Jueves","Fri":"Viernes","Sat":"Sábado", "Sun":"Domingo"}
@@ -20,6 +20,6 @@ def newEntry(nomArchivo, fechaHoy):
     mes = fechaHoy.strftime("%m")
     diaSemana = diasES[fechaHoy.strftime("%a")]				# obtiene el dia de la semana a partir del dia de hoy
     nomArchivo.write(f"[{dia}/{mes}({diaSemana})]: ")		# escribe la fecha a partir de los datos obtenidos previamente
-    nomArchivo.write(input("¿Cómo te sientes hoy?: "))		# pide al usuario el contenido de la entrada y lo añade
-    print("Tu entrada se guardó correctamente.")			# muestra un mensaje confirmando el éxito de la tarea
+    nomArchivo.write(input("¿Cómo estas el día de hoy?: "))		# pide al usuario el contenido de la entrada y lo añade
+    print("Tu entrada ha sido guardada de manera correcta.")			# muestra un mensaje confirmando el éxito de la tarea
     nomArchivo.write("\n" + "-"*50 + "\n")					# deja un separador para que se distinga una entrada de otra
